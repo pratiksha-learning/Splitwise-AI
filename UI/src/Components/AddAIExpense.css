@@ -1,0 +1,94 @@
+.ai-page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f9fafb;
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .ai-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .ai-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .tooltip {
+    margin-left: 0.4rem;
+    cursor: help;
+    color: #9ca3af; /* gray-400 */
+    font-size: 1rem;
+  }
+  
+  .ai-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+  }
+  
+  .submit-button {
+    background-color: #10b981; /* green-500 */
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .submit-button:hover {
+    background-color: #059669; /* green-600 */
+  }
+
+  .ai-box-with-bg {
+    background-image: url('.././Images/first_tab.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8); /* fallback overlay */
+    backdrop-filter: blur(4px);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 70%;
+    max-width: 700px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .success-message {
+    margin-top: 2rem;
+    color: #10b981; /* green-500 */
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  

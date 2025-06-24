@@ -1,0 +1,85 @@
+.page-container {
+    padding: 1.5rem;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  
+  .back-button {
+    display: inline-block;
+    color: #2563eb; /* blue-600 */
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .page-description {
+    font-size: 1rem;
+    color: #4b5563; /* gray-600 */
+  }
+
+  .home-container {
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .home-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .card-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 960px;
+    width: 100%;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    width: 280px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+  }
+  
+  

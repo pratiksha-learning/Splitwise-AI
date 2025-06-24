@@ -1,0 +1,30 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+  "plugin:react/recommended",
+  "plugin:@typescript-eslint/recommended",
+  "prettier"
+],
+    "plugins": ["react", "@typescript-eslint", "react-hooks", "jsx-a11y"],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "react/prop-types": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "no-console": "warn",
+      "react/jsx-key": "warn",
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/no-unused-expressions": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
+  
