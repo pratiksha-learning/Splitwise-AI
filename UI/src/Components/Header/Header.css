@@ -1,0 +1,37 @@
+.page-header {
+    height: 180px;
+    /* width: 100%; */
+    background: linear-gradient(135deg, #42a5f5, #478ed1);
+    background-image: url('../../Images/first_tab.png'); /* optional */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .page-header-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 16px;
+  }
+  
+  .page-header-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  
+  .page-header-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+  

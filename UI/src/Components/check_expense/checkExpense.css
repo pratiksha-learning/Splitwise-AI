@@ -1,0 +1,101 @@
+/* Outer container centers the panel */
+.expenses-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: #f9fafb;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Banner header */
+  .banner-section {
+    height: 140px;
+    background-image: url('../../Images/first_tab.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+  
+  /* List of expenses */
+  .expense-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* Each expense card */
+  .expense-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+  }
+  
+  .expense-item:hover {
+    transform: scale(1.01);
+  }
+  
+  /* Header layout for title and amount */
+  .expense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Title and tag stack */
+  .expense-title {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Mode tag */
+  .mode-tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-block;
+    width: fit-content;
+    margin-top: 4px;
+  }
+  
+  .mode-ai {
+    background-color: #e3f2fd;
+    color: #1565c0;
+  }
+  
+  .mode-manual {
+    background-color: #fce4ec;
+    color: #c2185b;
+  }
+  
+  /* Amount color codes */
+  .amount {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  .owed {
+    color: #d32f2f;
+  }
+  
+  .receivable {
+    color: #388e3c;
+  }
+  
+  /* Expense details */
+  .expense-details {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .split-label {
+    font-size: 13px;
+    margin-top: 4px;
+    color: #555;
+    display: inline-block;
+  }
+  
