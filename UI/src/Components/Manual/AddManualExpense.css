@@ -79,4 +79,28 @@
     font-size: 1.1rem;
     text-align: center;
   }
+
+  .split-with-dropdown {
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #f9f9f9;
+  }
+  
+  .checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .paid_and_split {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .select {
+    height: max-content;
+  }
   

@@ -11,7 +11,7 @@ const ContactOverlay: React.FC<ContactOverlayProps> = ({ contacts, onSelect }) =
   const [selected, setSelected] = useState<string[]>([]);
 
   const filteredContacts = contacts.filter((c) =>
-    c.toLowerCase().includes(searchTerm.toLowerCase())
+    c.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const toggleContact = (name: string) => {
