@@ -1,11 +1,10 @@
 .ai-page-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    background-color: #f9fafb;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
   
   .back-button {
@@ -70,7 +69,7 @@
   }
 
   .ai-box-with-bg {
-    background-image: url('.././Images/first_tab.png'); /* Replace with your image path */
+    display: contents;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -78,10 +77,13 @@
     backdrop-filter: blur(4px);
     padding: 2rem;
     border-radius: 1rem;
-    width: 70%;
     max-width: 700px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
 
   .success-message {

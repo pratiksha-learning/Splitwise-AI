@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AddManualExpense.css";
+import Header from "../Header/Header";
+import ContactOverlay from "../ContactOverlay/ContactOverlay";
 
 const AddManualExpense: React.FC = () => {
   const navigate = useNavigate();
@@ -10,6 +12,18 @@ const AddManualExpense: React.FC = () => {
     amount: "",
     split: "split",
   });
+  const [selectedContact, setSelectedContact] = useState<string[] | null>(null);
+
+  const contacts = ['Harsh', 'Prachi', 'Rahul', 'H', 'Prat', 'Seh'];
+
+  if (!selectedContact) {
+    return (
+      <ContactOverlay
+        contacts={contacts}
+        onSelect={(name) => setSelectedContact(name)}
+      />
+    );
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,7 +37,11 @@ const AddManualExpense: React.FC = () => {
   return (
     <div className="manual-page-container">
       <button className="back-button" onClick={() => navigate(-1)}>&larr; Back</button>
-      <div className="ai-box-with-bg">
+      <div className="manual-box-with-bg">
+      <Header
+        title="Add Manual Expense"
+        subtitle="Create a manual entry for your shared expenses"
+      />
       <form className="manual-form" onSubmit={handleSubmit}>
         <label>Title</label>
         <input
