@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./AddManualExpense.css";
 import Header from "../Header/Header";
 import ContactOverlay from "../ContactOverlay/ContactOverlay";
+import { contacts } from "../config";
 
 const AddManualExpense: React.FC = () => {
   const navigate = useNavigate();
@@ -13,8 +14,6 @@ const AddManualExpense: React.FC = () => {
     split: "split",
   });
   const [selectedContact, setSelectedContact] = useState<string[] | null>(null);
-
-  const contacts = ['Harsh', 'Prachi', 'Rahul', 'H', 'Prat', 'Seh'];
 
   if (!selectedContact) {
     return (

@@ -3,13 +3,12 @@ import { useNavigate} from "react-router-dom";
 import "./AddAIExpense.css";
 import Header from "../Header/Header";
 import ContactOverlay from "../ContactOverlay/ContactOverlay";
+import { contacts } from "../config";
 
 const AddAIExpense: React.FC = () => {
   const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
   const [selectedContact, setSelectedContact] = useState<string[] | null>(null);
-
-  const contacts = ['Harsh', 'Prachi', 'Rahul', 'H', 'Prat', 'Seh'];
 
   if (!selectedContact) {
     return (
