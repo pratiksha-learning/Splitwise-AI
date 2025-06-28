@@ -1,0 +1,66 @@
+import { Expense } from "./check_expense/ListItemWidget";
+
+export const contacts = ['Harsh', 'Prachi', 'Rahul', 'H', 'Prat', 'Seh'];
+
+export const dummyExpenses: Expense[] = [
+    {
+      id: '1',
+      title: 'Dinner at ABC',
+      addedBy: 'Harsh',
+      amount: 800,
+      paidBy: 'Harsh',
+      owedBy: 'Pratiksha',
+      mode: 'manual',
+      splitType: 'youOweFull',
+    },
+    {
+      id: '2',
+      title: 'Cab from office',
+      addedBy: 'Pratiksha',
+      amount: 300,
+      paidBy: 'Pratiksha',
+      owedBy: 'Harsh',
+      mode: 'api',
+      splitType: 'equal',
+    },
+    {
+      id: '2',
+      title: 'Cab from office',
+      addedBy: 'Pratiksha',
+      amount: 300,
+      paidBy: 'Pratiksha',
+      owedBy: 'Harsh',
+      mode: 'api',
+      splitType: 'equal',
+    },
+    {
+      id: '2',
+      title: 'Cab from office',
+      addedBy: 'Pratiksha',
+      amount: 300,
+      paidBy: 'Pratiksha',
+      owedBy: 'Harsh',
+      mode: 'api',
+      splitType: 'equal',
+    },
+    {
+      id: '2',
+      title: 'Cab from office',
+      addedBy: 'Pratiksha',
+      amount: 300,
+      paidBy: 'Pratiksha',
+      owedBy: 'Harsh',
+      mode: 'api',
+      splitType: 'equal',
+    },
+    {
+      id: '2',
+      title: 'Cab from office',
+      addedBy: 'Pratiksha',
+      amount: 300,
+      paidBy: 'Pratiksha',
+      owedBy: 'Harsh',
+      mode: 'api',
+      splitType: 'equal',
+    },
+  ];
