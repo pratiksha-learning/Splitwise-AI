@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import "./checkExpense.css";
+import './checkExpense.css';
 
 export interface Expense {
   id: string;
   title: string;
   addedBy: string;
   amount: number;
-  paidBy: string;
-  owedBy: string;
-  mode: 'manual' | 'api';
+  paid_by: string;
+  split_with: string[];
+  source: 'manual' | 'ai';
   splitType: 'equal' | 'youOweFull' | 'theyOweFull';
 }
 
@@ -19,37 +19,60 @@ interface Props {
 
 const Items: React.FC<Props> = ({ expense, currentUser }) => {
   const [expanded, setExpanded] = useState(false);
-  const isUserOwes = expense.owedBy === currentUser;
-  const isUserCreditor = expense.paidBy === currentUser;
+  const isUserCreditor = expense.paid_by === currentUser;
+  const splitCount = expense.split_with.length; // include the payer
+  const perPerson = expense.amount / splitCount;
 
   let splitLabel = '';
-  if (expense.splitType === 'equal') {
+  const { paid_by, split_with } = expense;
+
+  const youPaid = paid_by === currentUser;
+  const youAreInSplit = split_with.includes(currentUser);
+
+  if (youPaid && youAreInSplit) {
     splitLabel = '🤝 Split Equally';
-  } else if (expense.splitType === 'youOweFull') {
-    splitLabel = '🟥 You Owe Full';
-  } else if (expense.splitType === 'theyOweFull') {
-    splitLabel = '🟩 They Owe Full';
+  } else if (!youPaid && youAreInSplit) {
+    splitLabel = '🟥 You Owe';
+  } else if (youPaid && !youAreInSplit) {
+    splitLabel = '🟩 They Owe';
   }
 
-  const amountClass = isUserOwes ? 'owed' : isUserCreditor ? 'receivable' : '';
+  const amountClass = isUserCreditor ? 'receivable' : 'owed';
 
+  let amount = null;
+  if (splitLabel.includes('You Owe')) {
+    amount = perPerson;
+  } else if (splitLabel.includes('Split Equally')) {
+    amount = perPerson * (splitCount - 1);
+  } else {
+    amount = expense.amount;
+  }
   return (
     <div className="expense-item">
       <div className="expense-header" onClick={() => setExpanded(!expanded)}>
         <div className="expense-title">
           <strong>{expense.title}</strong>
-          <span className={`mode-tag ${expense.mode === 'manual' ? 'mode-manual' : 'mode-ai'}`}>
-            {expense.mode === 'manual' ? 'Manual' : 'AI'}
-          </span>
-          <span className="split-label">{splitLabel}</span>
+          <div style={{ display: 'flex' }}>
+            <span className={`mode-tag ${expense.source === 'manual' ? 'mode-manual' : 'mode-ai'}`}>
+              {expense.source === 'manual' ? 'Manual' : 'AI'}
+            </span>
+            <span className="split-label">{splitLabel}</span>
+          </div>
         </div>
-        <div className={`amount ${amountClass}`}>₹{expense.amount}</div>
+        <div className={`amount ${amountClass}`}>₹{amount}</div>
       </div>
 
       {expanded && (
         <div className="expense-details">
-          <p><strong>Paid By:</strong> {expense.paidBy}</p>
-          <p><strong>Owed By:</strong> {expense.owedBy}</p>
+          <p>
+            <strong>Paid By:</strong> {expense.paid_by}
+          </p>
+          <p>
+            <strong>Owed By:</strong> {expense.split_with.join(', ')}
+          </p>
+          <p>
+            <strong>Total:</strong> {expense.amount}
+          </p>
         </div>
       )}
     </div>
