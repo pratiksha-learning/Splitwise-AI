@@ -159,6 +159,6 @@ COHERE_API_KEY=your_cohere_key
 ## 👩‍💻 Author
 
 Crafted with ❤️ and caffeine by **Pratiksha Bhandari**  
-[[LinkedIn]](#https://www.linkedin.com/in/pratiksha-bhandari-042047194/) • [GitHub](#https://github.com/pratiksha-learning/Splitwise-AI)
+[LinkedIn](https://www.linkedin.com/in/pratiksha-bhandari-042047194/) • [GitHub](https://github.com/pratiksha-learning/Splitwise-AI)
 
 ---
