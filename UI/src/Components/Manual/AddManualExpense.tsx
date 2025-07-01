@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AddManualExpense.css';
 import Header from '../Header/Header';
 import ContactOverlay from '../ContactOverlay/ContactOverlay';
 import { contacts } from '../config';
+import { addManualExpense } from '../../actions/api';
 
 const AddManualExpense: React.FC = () => {
   const navigate = useNavigate();
@@ -39,9 +41,23 @@ const AddManualExpense: React.FC = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    try {
+      const payload = {
+        title: form.title,
+        amount: parseFloat(form.amount),
+        paid_by: form.paidBy,
+        split_with: form.splitWith,
+      };
+
+      const res = await addManualExpense(payload);
+      console.log('Manual saved:', res);
+      setSubmitted(true);
+    } catch (err: any) {
+      alert(err.message);
+    }
   };
 
   return (
